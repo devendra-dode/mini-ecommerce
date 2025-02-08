@@ -63,13 +63,36 @@ Now, follow these steps to clone and set up this project:
 
 2. **Install dependencies:**  
    ```sh
-   composer install
+   composer clear-cache
+   composer install && composer update
    ```
 
-3. **Setup environment:**  
+ 
+While running composer install or composer update, you may encounter an error indicating that the intl PHP extension is missing. This extension is required by the filament/support package.
+
+Steps to Fix:
+
+***Enable intl Extension in PHP***
+
+Open C:\xampp\php\php.ini in a text editor.
+
+Find this line:
+
    ```sh
-   cp .env.example .env
-   php artisan key:generate
+    ;extension=intl
+   ```
+Remove the ; at the beginning to uncomment it:
+
+   ```sh
+    extension=intl
+   ```
+After completing these steps, try running composer install or composer update again.
+
+3. **Configure Paypal:**  
+   ```sh
+   PAYPAL_MODE=sandbox  # Change to 'live' if using a live account
+   PAYPAL_SANDBOX_CLIENT_ID=
+   PAYPAL_SANDBOX_CLIENT_SECRET=
    ```
 
 4. **Configure database:** (Update `.env` file)  
@@ -97,6 +120,11 @@ Now, follow these steps to clone and set up this project:
    ```sh
    php artisan serve
    ```
+
+Now, you can open your browser and visit http://127.0.0.1:8000 to access your Laravel application.
+
+Visit: [http://127.0.0.1:8000/products](http://127.0.0.1:8000/products)
+View Order List: [http://127.0.0.1:8000/admin/orders](http://127.0.0.1:8000/admin/orders)
 
 ---
 
