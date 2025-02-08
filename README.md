@@ -46,11 +46,14 @@ CREATE DATABASE ecommerce;
 ### Installation
 
 **Navigate to XAMPP/htdocs**  
+
 Open the command prompt and run the following command to navigate to the `xampp/htdocs` directory:
 
 ```sh
 cd xampp/htdocs
 ```
+
+Now, follow these steps to clone and set up this project:
 
 1. **Clone the repository:**  
    ```sh
@@ -84,19 +87,13 @@ cd xampp/htdocs
    php artisan migrate
    ```
 
-6. **Install and setup Filament:**  
-   ```sh
-   composer require filament/filament
-   php artisan filament:install
-   ```
-
-7. **Seed Products from API:**  
+6. **Seed Products from API:**  
    ```sh
    php artisan fetch:products
    php artisan sync:products
    ```
 
-8. **Start the server:**  
+7. **Start the server:**  
    ```sh
    php artisan serve
    ```
