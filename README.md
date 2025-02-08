@@ -112,7 +112,6 @@ After completing these steps, try running composer install or composer update ag
 
 6. **Seed Products from API:**  
    ```sh
-   php artisan fetch:products
    php artisan sync:products
    ```
 
@@ -123,8 +122,15 @@ After completing these steps, try running composer install or composer update ag
 
 Now, you can open your browser and visit http://127.0.0.1:8000 to access your Laravel application.
 
+ **For Paypal dummy email and password:**  
+   ```sh
+   Email :- sb-egxqq37301256@business.example.com
+   Password :- o+U7Q5fU
+   ```
+
 Visit: [http://127.0.0.1:8000/products](http://127.0.0.1:8000/products)
 View Order List: [http://127.0.0.1:8000/admin/orders](http://127.0.0.1:8000/admin/orders)
+
 
 ---
 
