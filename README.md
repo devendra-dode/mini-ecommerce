@@ -29,8 +29,9 @@
 
 ## Create Database
 - Run this command to create database
-  ```CREATE DATABASE ecommerce;
-  ```
+```sh
+CREATE DATABASE ecommerce;
+```
 
 ## Project Setup
 
@@ -53,8 +54,8 @@ cd xampp/htdocs
 
 1. **Clone the repository:**  
    ```sh
-   git clone <repository_url>
-   cd laravel-ecommerce
+   git clone https://github.com/devendra-dode/mini-ecommerce.git
+   cd mini-ecommerce
    ```
 
 2. **Install dependencies:**  
