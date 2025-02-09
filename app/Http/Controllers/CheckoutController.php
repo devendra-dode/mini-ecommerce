@@ -16,6 +16,8 @@ class CheckoutController extends Controller
     public function index()
     {
         $cart = session('cart', []);
+
+       // dd($cart);
         $total = array_sum(array_map(fn($item) => $item['product']->price * $item['quantity'], $cart));
 
         return view('checkout.index', compact('cart', 'total'));
