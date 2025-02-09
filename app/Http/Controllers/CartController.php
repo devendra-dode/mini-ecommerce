@@ -48,13 +48,19 @@ class CartController extends Controller
     {
         $cart = session()->get('cart', []);
 
+        // Check if the cart is empty
+        if (empty($cart)) {
+            return redirect()->route('cart.index')->with('error', 'Cart is empty, nothing to update.');
+        }
+
         foreach ($request->quantities as $id => $quantity) {
             if (isset($cart[$id])) {
-                $cart[$id]['quantity'] = $quantity;
+                $cart[$id]['quantity'] = max(1, intval($quantity)); // Ensure quantity is at least 1
             }
         }
 
         session()->put('cart', $cart);
+
         return redirect()->route('cart.index')->with('success', 'Cart updated successfully!');
     }
 
